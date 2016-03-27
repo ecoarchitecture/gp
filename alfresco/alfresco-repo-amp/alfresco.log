@@ -1,0 +1,166 @@
+2016-03-26 18:28:12,589 WARN  [org.alfresco.util.RuntimeSystemPropertiesSetter] [main] Could not find alfresco-jmxrmi.password on classpath
+2016-03-26 18:28:12,687 INFO  [org.alfresco.repo.admin] [main] Using database URL 'jdbc:h2:/Users/vanderluk/Trabajo/IIKT/GP/project/repository/gp/alf_data_dev/h2_data/alf_dev;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000;MVCC=FALSE;LOCK_MODE=0' with user 'alfresco'.
+2016-03-26 18:28:13,040 INFO  [org.alfresco.repo.admin] [main] Connected to database H2 version 1.4.190 (2015-10-11)
+2016-03-26 18:28:16,986 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Ignoring script patch (post-Hibernate): patch.db-V4.2-metadata-query-indexes
+2016-03-26 18:28:16,986 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Ignoring script patch (post-Hibernate): patch.db-V5.1-metadata-query-indexes
+2016-03-26 18:28:22,315 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted]
+2016-03-26 18:28:22,370 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted] complete
+2016-03-26 18:28:22,375 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Connecting to database: jdbc:h2:/Users/vanderluk/Trabajo/IIKT/GP/project/repository/gp/alf_data_dev/h2_data/alf_dev, UserName=ALFRESCO, H2 JDBC Driver
+2016-03-26 18:28:22,375 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema managed by database dialect org.hibernate.dialect.H2Dialect.
+2016-03-26 18:28:22,532 WARN  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema validation found 85 potential problems, results written to: /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/Alfresco-H2Dialect-Validation-Pre-Upgrade-alf_-3604420465276757464.txt
+2016-03-26 18:28:22,539 WARN  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema validation found 26 potential problems, results written to: /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/Alfresco-H2Dialect-Validation-Pre-Upgrade-act_-5222104690651207600.txt
+2016-03-26 18:28:22,623 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Normalized schema dumped to file /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/Alfresco-schema-H2Dialect-pre-upgrade-alf_-5539084469871526438.xml.
+2016-03-26 18:28:22,623 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Normalized schema dumped to file /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/Alfresco-schema-H2Dialect-pre-upgrade-jbpm_-2693287305567318631.xml.
+2016-03-26 18:28:22,623 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Normalized schema dumped to file /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/Alfresco-schema-H2Dialect-pre-upgrade-act_-1819500197661072118.xml.
+2016-03-26 18:28:22,628 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-4194534988789852220.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-RepoTables.sql).
+2016-03-26 18:28:22,740 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-2316870772756205247.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-LockTables.sql).
+2016-03-26 18:28:22,748 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-1036583168809730780.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-ContentTables.sql).
+2016-03-26 18:28:22,760 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-8989882522662342259.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-PropertyValueTables.sql).
+2016-03-26 18:28:22,773 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-7070663501628218118.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-ContentUrlEncryptionTables.sql).
+2016-03-26 18:28:22,790 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-8190982690813405977.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-AuditTables.sql).
+2016-03-26 18:28:22,803 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-7604195907623893318.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-ActivityTables.sql).
+2016-03-26 18:28:22,811 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-4209557083054402070.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-UsageTables.sql).
+2016-03-26 18:28:22,815 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-3212916848462789381.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-SubscriptionTables.sql).
+2016-03-26 18:28:22,819 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-4261333883270471702.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-TenantTables.sql).
+2016-03-26 18:28:22,822 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-3051594352351795593.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoCreate-AuthorizationTables.sql).
+2016-03-26 18:28:22,882 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-4668221665519406533.sql (Generated).
+2016-03-26 18:28:23,002 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-3399285218232198636.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoPostCreate-JBPM-Extra.sql).
+2016-03-26 18:28:23,004 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-3225354378127059867.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoPostCreate-JBPM-FK-indexes.sql).
+2016-03-26 18:28:23,016 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Executing database script /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-Update-7339616998356495056.sql (Copied from classpath:alfresco/dbscripts/create/org.hibernate.dialect.H2Dialect/AlfrescoPostCreate-JBPM-varinst-indexes.sql).
+2016-03-26 18:28:23,017 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Create scripts executed in 576 ms
+2016-03-26 18:28:23,334 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] All executed statements:  /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/AlfrescoSchema-H2Dialect-All_Statements-2928889276091666643.sql.
+2016-03-26 18:28:23,594 WARN  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema validation found 754 potential problems, results written to: /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/Alfresco-H2Dialect-Validation-Post-Upgrade-alf_-8245278499439775487.txt
+2016-03-26 18:28:23,753 WARN  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Schema validation found 275 potential problems, results written to: /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/Alfresco-H2Dialect-Validation-Post-Upgrade-act_-8991504967734854204.txt
+2016-03-26 18:28:24,048 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Normalized schema dumped to file /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/Alfresco-schema-H2Dialect-post-upgrade-alf_-2325033127032469024.xml.
+2016-03-26 18:28:24,048 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Normalized schema dumped to file /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/Alfresco-schema-H2Dialect-post-upgrade-jbpm_-2941923080784110718.xml.
+2016-03-26 18:28:24,048 INFO  [org.alfresco.repo.domain.schema.SchemaBootstrap] [main] Normalized schema dumped to file /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/Alfresco-schema-H2Dialect-post-upgrade-act_-3053129212193464531.xml.
+2016-03-26 18:28:24,212 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Search' subsystem, ID: [Search, managed, solr4]
+2016-03-26 18:28:24,394 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Search' subsystem, ID: [Search, managed, solr4] complete
+2016-03-26 18:28:27,767 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1]
+2016-03-26 18:28:27,866 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1] complete
+2016-03-26 18:28:30,878 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'thirdparty' subsystem, ID: [thirdparty, default]
+2016-03-26 18:28:30,961 ERROR [org.alfresco.repo.content.transform.magick.AbstractImageMagickContentTransformerWorker] [main] ImageMagickContentTransformerWorker not available: 02260001 Failed to perform ImageMagick transformation: 
+Execution result: 
+   os:         Mac OS X
+   command:    ./ImageMagick/bin/convert /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/ImageMagickContentTransformerWorker_init_source_477688262608966022.gif /var/folders/lp/ww7dpnzx1sj33t28gt3527m40000gn/T/Alfresco/ImageMagickContentTransformerWorker_init_target_2680062435966790730.png
+   succeeded:  false
+   exit code:  1
+   out:        
+   err:        Cannot run program "./ImageMagick/bin/convert": error=2, No such file or directory
+2016-03-26 18:28:30,962 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'thirdparty' subsystem, ID: [thirdparty, default] complete
+2016-03-26 18:28:30,962 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'OOoDirect' subsystem, ID: [OOoDirect, default]
+2016-03-26 18:28:31,110 ERROR [org.alfresco.util.exec.RuntimeExecBootstrapBean] [main] Bootstrap command failed: 
+Execution result: 
+   os:         Mac OS X
+   command:    soffice -accept=socket,host=127.0.0.1,port=8100;urp;StarOffice.ServiceManager -env:UserInstallation=file:///Users/vanderluk/Trabajo/IIKT/GP/project/repository/gp/alf_data_dev/oouser -headless -nocrashreport -nofirststartwizard -nologo -norestore
+   succeeded:  false
+   exit code:  2
+   out:        
+   err:        Cannot run program "soffice": error=2, No such file or directory
+2016-03-26 18:29:46,187 WARN  [org.alfresco.util.OpenOfficeConnectionTester] [main] An initial OpenOffice connection could not be established.
+2016-03-26 18:29:46,189 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'OOoDirect' subsystem, ID: [OOoDirect, default] complete
+2016-03-26 18:29:46,191 INFO  [org.alfresco.repo.admin.ConfigurationChecker] [main] The Alfresco root data directory ('dir.root') is: /Users/vanderluk/Trabajo/IIKT/GP/project/repository/gp/alf_data_dev
+2016-03-26 18:29:46,197 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] Checking for patches to apply ...
+2016-03-26 18:29:46,235 WARN  [org.alfresco.repo.admin.patch.PatchExecuter] [main] Patch description is not available: Patch[ id=patch.contentFormFolderType, description=patch.contentFormFolderType.description, fixesFromSchema=0, fixesToSchema=36, targetSchema=37, ignored=false]
+2016-03-26 18:29:46,242 WARN  [org.alfresco.repo.admin.patch.PatchExecuter] [main] Patch description is not available: Patch[ id=patch.redeploySubmitProcess, description=patch.redeploySubmitProcess.description, fixesFromSchema=0, fixesToSchema=57, targetSchema=58, ignored=false]
+2016-03-26 18:29:46,356 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 	Applying patch 'patch.exampleJavaScript' (Loads sample Javascript file into datadictionary scripts folder).
+2016-03-26 18:29:46,382 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 
+=== Applied patch                 === 
+ID: patch.db-V3.4-UsageTables
+RESULT: 
+Script completed
+=====================================
+2016-03-26 18:29:46,383 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 
+=== Applied patch                 === 
+ID: patch.db-V4.0-TenantTables
+RESULT: 
+Script completed
+=====================================
+2016-03-26 18:29:46,383 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 
+=== Applied patch                 === 
+ID: patch.db-V3.4-JBPM-varinst-indexes
+RESULT: 
+Script completed
+=====================================
+2016-03-26 18:29:46,383 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 
+=== Applied patch                 === 
+ID: patch.db-V4.1-AuthorizationTables
+RESULT: 
+Script completed
+=====================================
+2016-03-26 18:29:46,383 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 
+=== Applied patch                 === 
+ID: patch.db-V5.0-ContentUrlEncryptionTables
+RESULT: 
+Script completed
+=====================================
+2016-03-26 18:29:46,383 INFO  [org.alfresco.repo.admin.patch.PatchExecuter] [main] 
+=== Applied patch                 === 
+ID: patch.exampleJavaScript
+RESULT: 
+Imported view into bootstrap location: /app:company_home/app:dictionary/app:scripts (workspace://SpacesStore/b1c0bab9-e293-4cdc-947d-0272bd4789a1)
+=====================================
+2016-03-26 18:29:46,393 INFO  [org.alfresco.repo.module.ModuleServiceImpl] [main] Found 1 module package(s).
+2016-03-26 18:29:46,405 INFO  [org.alfresco.repo.module.ModuleServiceImpl] [main] Installing module 'alfresco-repo-amp' version 1.0-SNAPSHOT.
+2016-03-26 18:29:46,411 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'fileServers' subsystem, ID: [fileServers, default]
+2016-03-26 18:29:46,584 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'sysAdmin' subsystem, ID: [sysAdmin, default]
+2016-03-26 18:29:46,956 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'sysAdmin' subsystem, ID: [sysAdmin, default] complete
+2016-03-26 18:29:46,970 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'fileServers' subsystem, ID: [fileServers, default] complete
+2016-03-26 18:29:46,970 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'imap' subsystem, ID: [imap, default]
+2016-03-26 18:29:47,036 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'imap' subsystem, ID: [imap, default] complete
+2016-03-26 18:29:47,036 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'email' subsystem, ID: [email, outbound]
+2016-03-26 18:29:47,154 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'email' subsystem, ID: [email, outbound] complete
+2016-03-26 18:29:47,154 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'email' subsystem, ID: [email, inbound]
+2016-03-26 18:29:47,194 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'email' subsystem, ID: [email, inbound] complete
+2016-03-26 18:29:47,194 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Subscriptions' subsystem, ID: [Subscriptions, default]
+2016-03-26 18:29:47,214 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Subscriptions' subsystem, ID: [Subscriptions, default] complete
+2016-03-26 18:29:47,221 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Synchronization' subsystem, ID: [Synchronization, default]
+2016-03-26 18:29:47,269 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Synchronization' subsystem, ID: [Synchronization, default] complete
+2016-03-26 18:29:47,276 INFO  [org.alfresco.service.descriptor.DescriptorService] [main] Alfresco JVM - v1.8.0_60-b27; maximum heap size 1355.000MB
+2016-03-26 18:29:47,276 INFO  [org.alfresco.service.descriptor.DescriptorService] [main] Server Mode :UNKNOWN
+2016-03-26 18:29:47,278 INFO  [org.alfresco.service.descriptor.DescriptorService] [main] Alfresco started (Community). Current version: 5.1.0 (r122274-b3) schema 9,016. Originally installed version: 5.1.0 (r122274-b3) schema 9,016.
+2016-03-26 18:29:47,284 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default]
+2016-03-26 18:29:47,425 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default] complete
+2016-03-26 18:29:47,425 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Starting 'Replication' subsystem, ID: [Replication, default]
+2016-03-26 18:29:47,444 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [main] Startup of 'Replication' subsystem, ID: [Replication, default] complete
+2016-03-26 18:29:48,515 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] [main] Registered 13 Web Scripts (+0 failed), 15 URLs
+2016-03-26 18:29:48,515 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] [main] Registered 1 Package Description Documents (+0 failed) 
+2016-03-26 18:29:48,515 INFO  [org.springframework.extensions.webscripts.DeclarativeRegistry] [main] Registered 0 Schema Description Documents (+0 failed) 
+2016-03-26 18:29:48,518 INFO  [org.springframework.extensions.webscripts.AbstractRuntimeContainer] [main] Initialised Spring Web Scripts Container Web Script Container (in 91.982056ms)
+2016-03-26 18:29:48,542 INFO  [org.springframework.extensions.webscripts.TemplateProcessorRegistry] [main] Registered template processor freemarker for extension ftl
+2016-03-26 18:29:48,545 INFO  [org.springframework.extensions.webscripts.ScriptProcessorRegistry] [main] Registered script processor javascript for extension js
+2016-03-26 18:29:48,688 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'Replication' subsystem, ID: [Replication, default]
+2016-03-26 18:29:48,689 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'Replication' subsystem, ID: [Replication, default]
+2016-03-26 18:29:48,733 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'Subscriptions' subsystem, ID: [Subscriptions, default]
+2016-03-26 18:29:48,733 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'Subscriptions' subsystem, ID: [Subscriptions, default]
+2016-03-26 18:29:48,734 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'email' subsystem, ID: [email, inbound]
+2016-03-26 18:29:48,734 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'email' subsystem, ID: [email, inbound]
+2016-03-26 18:29:48,735 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'fileServers' subsystem, ID: [fileServers, default]
+2016-03-26 18:29:48,737 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'fileServers' subsystem, ID: [fileServers, default]
+2016-03-26 18:29:48,743 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default]
+2016-03-26 18:29:48,744 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'ActivitiesFeed' subsystem, ID: [ActivitiesFeed, default]
+2016-03-26 18:29:48,744 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-24] Invocation of destroy method 'close' failed on bean with name 'solrSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2016-03-26 18:29:48,745 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-24] Invocation of destroy method 'close' failed on bean with name 'activitiesSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2016-03-26 18:29:48,747 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'OOoDirect' subsystem, ID: [OOoDirect, default]
+2016-03-26 18:29:48,747 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'OOoDirect' subsystem, ID: [OOoDirect, default]
+2016-03-26 18:29:48,748 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted]
+2016-03-26 18:29:48,748 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'ContentStore' subsystem, ID: [ContentStore, managed, unencrypted]
+2016-03-26 18:29:48,750 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'Synchronization' subsystem, ID: [Synchronization, default]
+2016-03-26 18:29:48,751 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'Synchronization' subsystem, ID: [Synchronization, default]
+2016-03-26 18:29:48,764 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'email' subsystem, ID: [email, outbound]
+2016-03-26 18:29:48,764 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'email' subsystem, ID: [email, outbound]
+2016-03-26 18:29:48,775 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'imap' subsystem, ID: [imap, default]
+2016-03-26 18:29:48,776 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'imap' subsystem, ID: [imap, default]
+2016-03-26 18:29:49,284 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'Search' subsystem, ID: [Search, managed, solr4]
+2016-03-26 18:29:49,424 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'Search' subsystem, ID: [Search, managed, solr4]
+2016-03-26 18:29:49,454 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-24] Invocation of destroy method 'close' failed on bean with name 'locksSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2016-03-26 18:29:49,456 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-24] Invocation of destroy method 'close' failed on bean with name 'propertyValueSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2016-03-26 18:29:49,456 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'thirdparty' subsystem, ID: [thirdparty, default]
+2016-03-26 18:29:49,456 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'thirdparty' subsystem, ID: [thirdparty, default]
+2016-03-26 18:29:49,457 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-24] Invocation of destroy method 'close' failed on bean with name 'auditSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2016-03-26 18:29:49,457 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1]
+2016-03-26 18:29:49,458 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'Authentication' subsystem, ID: [Authentication, managed, alfrescoNtlm1]
+2016-03-26 18:29:49,458 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopping 'sysAdmin' subsystem, ID: [sysAdmin, default]
+2016-03-26 18:29:49,458 INFO  [org.alfresco.repo.management.subsystems.ChildApplicationContextFactory] [Thread-24] Stopped 'sysAdmin' subsystem, ID: [sysAdmin, default]
+2016-03-26 18:29:49,459 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-24] Invocation of destroy method 'close' failed on bean with name 'contentSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2016-03-26 18:29:49,461 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter] [Thread-24] Invocation of destroy method 'close' failed on bean with name 'repoSqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession

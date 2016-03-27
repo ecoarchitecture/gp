@@ -1,0 +1,8 @@
+<project default="copy-resources">
+  <target name="init"/>
+  <target name="copy-resources" depends="init">
+    <copy todir="target/classes/Users/vanderluk/Trabajo/IIKT/GP/project/repository/gp/alfresco/alfresco-share-amp/target/amp" filtering="true">
+      <fileset dir="src/main/amp" includes="" excludes="**/*.java"/>
+    </copy>
+  </target>
+</project>
