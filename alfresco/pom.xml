@@ -15,7 +15,7 @@
         <version>2.2.0</version>
     </parent>
 
-    <!-- 
+    <!--
        SDK properties have sensible defaults in the SDK parent,
        but you can override the properties below to use another version.
        For more available properties see the alfresco-sdk-parent POM.
@@ -38,6 +38,7 @@
 
         <!-- The Alfresco Share web application is accessible via this URL -->
         <share.client.url>http://localhost:8080/share</share.client.url>
+        <app.log.root.level>DEBUG</app.log.root.level>
     </properties>
 
     <dependencies>
@@ -97,14 +98,14 @@
              -->
             <id>run</id>
             <properties>
-                <!-- While running in rapid dev mode with -Prun, we don't want amp web resources 
-                    to be added to the war, so we can load them directly from the AMP project (see 
+                <!-- While running in rapid dev mode with -Prun, we don't want amp web resources
+                    to be added to the war, so we can load them directly from the AMP project (see
                     runner/tomcat/context-*.xml for more details) -->
                 <maven.alfresco.includeWebResources>false</maven.alfresco.includeWebResources>
             </properties>
         </profile>
 
-	<!-- if we're on a unix machine, chmod run.sh to be executable -->        
+	<!-- if we're on a unix machine, chmod run.sh to be executable -->
         <profile>
         	<id>chmod</id>
         	<activation><os><family>unix</family></os></activation>

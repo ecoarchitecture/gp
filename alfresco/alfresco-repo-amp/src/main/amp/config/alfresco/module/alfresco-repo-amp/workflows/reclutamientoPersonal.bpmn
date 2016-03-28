@@ -1,57 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/reclutamiento">
   <process id="reclutamientoPersonal" name="Reclutamiento de Personal" isExecutable="true">
-    <startEvent id="startevent1" name="Start"></startEvent>
-    <userTask id="taskHelloWorld" name="HelloWorld Task" activiti:assignee="${initiator.properties.userName}" activiti:formKey="wf:activitiReviewTask">
+    <startEvent id="startReclutamiento" name="Iniciar Reclutamiento">
       <extensionElements>
-        <activiti:taskListener event="complete" class="org.alfresco.repo.workflow.activiti.tasklistener.ScriptTaskListener">
+        <activiti:executionListener event="start" class="org.alfresco.repo.workflow.activiti.listener.ScriptExecutionListener">
           <activiti:field name="script">
-            <activiti:string><![CDATA[execution.setVariable('wf_reviewOutcome', task.getVariable('wf_reviewOutcome'));]]></activiti:string>
+            <activiti:string><![CDATA[logger.log("Init start Reclutamiento");]]></activiti:string>
+          </activiti:field>
+        </activiti:executionListener>
+      </extensionElements>
+    </startEvent>
+    <serviceTask id="notificationNewSolicitudTask" name="Notificar nueva solicitud" activiti:class="org.alfresco.repo.workflow.activiti.script.AlfrescoScriptDelegate">
+      <extensionElements>
+        <activiti:field name="script">
+          <activiti:string><![CDATA[<import resource="classpath:alfresco/extension/workflows/reclutamiento/util.js">
+logger.log('Notificando de nueva solicitud');]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="runAs">
+          <activiti:string><![CDATA[admin]]></activiti:string>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow id="flow1" sourceRef="startReclutamiento" targetRef="notificationNewSolicitudTask"></sequenceFlow>
+    <userTask id="userTaskReviewSolicitud" name="Revisar Solicitud por RH" activiti:candidateGroups="GROUP_RecursosHumanos" activiti:formKey="wf:activitiReviewTask">
+      <extensionElements>
+        <activiti:taskListener event="create" class="org.alfresco.repo.workflow.activiti.listener.ScriptExecutionListener">
+          <activiti:field name="script">
+            <activiti:string><![CDATA[logger.log(' Creando tarea de revision');]]></activiti:string>
+          </activiti:field>
+          <activiti:field name="runAs">
+            <activiti:string><![CDATA[admin]]></activiti:string>
           </activiti:field>
         </activiti:taskListener>
       </extensionElements>
     </userTask>
+    <sequenceFlow id="flow2" sourceRef="notificationNewSolicitudTask" targetRef="userTaskReviewSolicitud"></sequenceFlow>
     <endEvent id="endevent1" name="End"></endEvent>
-    <sequenceFlow id="flowToHelloWorldTask" sourceRef="startevent1" targetRef="taskHelloWorld">
-      <extensionElements>
-        <activiti:executionListener event="start" class="org.alfresco.repo.workflow.activiti.listener.ScriptExecutionListener">
-          <activiti:field name="script">
-            <activiti:string><![CDATA[logger.log("Hello, World!!!!!!!");]]></activiti:string>
-          </activiti:field>
-        </activiti:executionListener>
-      </extensionElements>
-    </sequenceFlow>
-    <sequenceFlow id="flow1" sourceRef="taskHelloWorld" targetRef="scripttask1"></sequenceFlow>
-    <sequenceFlow id="flow2" sourceRef="scripttask1" targetRef="endevent1"></sequenceFlow>
-    <scriptTask id="scripttask1" name="Script Task" activiti:autoStoreVariables="false">
-      <script>logger.log("The outcome of the review task is: " + wf_reviewOutcome);</script>
-    </scriptTask>
+    <sequenceFlow id="flow3" sourceRef="userTaskReviewSolicitud" targetRef="endevent1"></sequenceFlow>
   </process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_reclutamientoPersonal">
     <bpmndi:BPMNPlane bpmnElement="reclutamientoPersonal" id="BPMNPlane_reclutamientoPersonal">
-      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
-        <omgdc:Bounds height="35.0" width="35.0" x="100.0" y="254.0"></omgdc:Bounds>
+      <bpmndi:BPMNShape bpmnElement="startReclutamiento" id="BPMNShape_startReclutamiento">
+        <omgdc:Bounds height="35.0" width="35.0" x="100.0" y="290.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="taskHelloWorld" id="BPMNShape_taskHelloWorld">
-        <omgdc:Bounds height="55.0" width="105.0" x="260.0" y="244.0"></omgdc:Bounds>
+      <bpmndi:BPMNShape bpmnElement="notificationNewSolicitudTask" id="BPMNShape_notificationNewSolicitudTask">
+        <omgdc:Bounds height="55.0" width="105.0" x="240.0" y="310.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTaskReviewSolicitud" id="BPMNShape_userTaskReviewSolicitud">
+        <omgdc:Bounds height="55.0" width="105.0" x="471.0" y="220.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
-        <omgdc:Bounds height="35.0" width="35.0" x="630.0" y="300.0"></omgdc:Bounds>
+        <omgdc:Bounds height="35.0" width="35.0" x="620.0" y="380.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="scripttask1" id="BPMNShape_scripttask1">
-        <omgdc:Bounds height="55.0" width="105.0" x="480.0" y="170.0"></omgdc:Bounds>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge bpmnElement="flowToHelloWorldTask" id="BPMNEdge_flowToHelloWorldTask">
-        <omgdi:waypoint x="135.0" y="271.0"></omgdi:waypoint>
-        <omgdi:waypoint x="260.0" y="271.0"></omgdi:waypoint>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
-        <omgdi:waypoint x="312.0" y="244.0"></omgdi:waypoint>
-        <omgdi:waypoint x="532.0" y="225.0"></omgdi:waypoint>
+        <omgdi:waypoint x="135.0" y="307.0"></omgdi:waypoint>
+        <omgdi:waypoint x="240.0" y="337.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
-        <omgdi:waypoint x="532.0" y="225.0"></omgdi:waypoint>
-        <omgdi:waypoint x="647.0" y="300.0"></omgdi:waypoint>
+        <omgdi:waypoint x="292.0" y="310.0"></omgdi:waypoint>
+        <omgdi:waypoint x="523.0" y="275.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="523.0" y="275.0"></omgdi:waypoint>
+        <omgdi:waypoint x="637.0" y="380.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

@@ -14,6 +14,7 @@
             <list>
                 <value>alfresco/module/${project.artifactId}/model/content-model.xml</value>
                 <value>alfresco/module/${project.artifactId}/model/workflow-model.xml</value>
+                <value>alfresco/module/${project.artifactId}/model/scWorkflowModel.xml</value>
 
             </list>
         </property>

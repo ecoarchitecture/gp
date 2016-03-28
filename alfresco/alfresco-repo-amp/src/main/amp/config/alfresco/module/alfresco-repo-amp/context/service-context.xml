@@ -34,6 +34,14 @@
         <property name="nodeService" ref="NodeService" />
         <property name="nodeLocatorService" ref="nodeLocatorService" />
     </bean>
+    
+    
+     <bean id="webscript.mx.granportuaria.bpm.review.get" class="mx.granportuaria.script.GetReview" parent="webscript">
+        <property name="workflowService">
+            <ref bean="WorkflowService" />      
+        </property>
+    </bean>
+    
 
 <bean id="${project.artifactId}.workflowBootstrap" parent="workflowDeployer">
     <property name="workflowDefinitions">
@@ -42,8 +50,32 @@
                 <prop key="engineId">activiti</prop>
                 <prop key="location">alfresco/module/${project.artifactId}/workflows/reclutamientoPersonal.bpmn</prop>
                 <prop key="mimetype">text/xml</prop>
-                <prop key="redeploy">false</prop>
+                <prop key="redeploy">true</prop>
             </props>
+            <props>
+                <prop key="engineId">activiti</prop>
+                <prop key="location">alfresco/module/${project.artifactId}/workflows/helloWorldUI.bpmn</prop>
+                <prop key="mimetype">text/xml</prop>
+                <prop key="redeploy">true</prop>
+            </props>
+            <props>
+                <prop key="engineId">activiti</prop>
+                <prop key="location">alfresco/module/${project.artifactId}/workflows/publishWhitepaper.bpmn</prop>
+                <prop key="mimetype">text/xml</prop>
+                <prop key="redeploy">true</prop>
+            </props>
+           
+            
+        </list>
+    </property>
+    <property name="models">
+        <list>
+            <value>alfresco/module/${project.artifactId}/model/scWorkflowModel.xml</value>
+        </list>
+    </property>
+    <property name="labels">
+        <list>
+            <value>alfresco.module.${project.artifactId}.messages.scWorkflow</value>
             
         </list>
     </property>
