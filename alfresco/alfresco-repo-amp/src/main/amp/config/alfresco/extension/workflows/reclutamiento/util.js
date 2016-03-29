@@ -25,7 +25,7 @@ function sendMailToUser(wfPackage, wfPooled, mailTitle, wfDescription, wfPriorit
 {
 	
 	
-	var descPriority = setDesPriority(wfPriority)
+	
 	var template = site.childByNamePath('Configuracion/Plantillas/wf-email-ftl.htm');
 
 	var wfMail = new Object();
@@ -35,7 +35,7 @@ function sendMailToUser(wfPackage, wfPooled, mailTitle, wfDescription, wfPriorit
 	wfMail.args.workflowTasks = true;
 	wfMail.args.workflowTitle = mailTitle;
 	wfMail.args.workflowDescription = wfDescription;
-	wfMail.args.workflowPriority = descPriority;
+	wfMail.args.workflowPriority = wfPriority;
 	wfMail.args.mailText = text;
 	wfMail.args.workflowComments = comments;
 	wfMail.args.workflowDocuments = wfPackage.children;
@@ -76,7 +76,7 @@ function sendMailToEndUser(wfPackage, wfTitle, wfText, wfFolio, wfAnalisis, wfEq
 	wfMail.args.ticketDescription = wfDesc;
 	wfMail.args.ticketDetail = wfDetail;
 	wfMail.args.workflowActions = wfActions;
-	wfMail.args.workflowPriority = setDesPriority(wfPriority);
+	wfMail.args.workflowPriority = wfPriority;
 	wfMail.args.workflowTasks = wfTasks;
 	wfMail.args.workflowDocuments = wfPackage.children;
 	if (email != null || email != ''){
