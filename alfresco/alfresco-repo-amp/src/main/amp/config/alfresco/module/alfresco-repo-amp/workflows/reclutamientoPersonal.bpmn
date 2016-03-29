@@ -24,35 +24,89 @@ sendMailToGroup(bpm_package, 'Nueva solicitud de reclutamiento', 'Descripción d
     </serviceTask>
     <sequenceFlow id="flow1" sourceRef="startReclutamiento" targetRef="notificationNewSolicitudTask"></sequenceFlow>
     <endEvent id="endevent1" name="End"></endEvent>
-    <userTask id="usertask1" name="Revisar Solicitud RH" activiti:candidateGroups="GROUP_RecursosHumanos" activiti:formKey="scwf:activitiOperationsReview"></userTask>
+    <userTask id="usertask1" name="Revisar Solicitud RH" activiti:candidateGroups="GROUP_RecursosHumanos" activiti:formKey="scwf:activitiOperationsReview">
+      <extensionElements>
+        <activiti:taskListener event="complete" class="org.alfresco.repo.workflow.activiti.tasklistener.ScriptTaskListener">
+          <activiti:field name="script">
+            <activiti:string><![CDATA[if(task.getVariableLocal('scwf_approveRejectOutcome') == 'Approve') {
+                execution.setVariable('scwf_tpApproved', true);
+				} else {
+				execution.setVariable('scwf_tpApproved', false);
+				}]]></activiti:string>
+          </activiti:field>
+        </activiti:taskListener>
+      </extensionElements>
+    </userTask>
     <sequenceFlow id="flow2" sourceRef="notificationNewSolicitudTask" targetRef="usertask1"></sequenceFlow>
-    <sequenceFlow id="flow3" sourceRef="usertask1" targetRef="endevent1"></sequenceFlow>
+    <sequenceFlow id="flow3" sourceRef="usertask1" targetRef="exgatewayReviewOutcome"></sequenceFlow>
+    <exclusiveGateway id="exgatewayReviewOutcome" name="Review Outcome"></exclusiveGateway>
+    <userTask id="taskBuscarCandidatos" name="Buscar Candidatos" activiti:candidateGroups="GROUP_RecursosHumanos" activiti:formKey="scwf:activitiOperationsReview"></userTask>
+    <userTask id="taskCorregirSolicitud" name="Corregir Solicitud" activiti:assignee="${initiator.properties.userName}" activiti:formKey="scwf:submitReviewTask"></userTask>
+    <sequenceFlow id="flowCorregir" name="Corregir Solicitud" sourceRef="exgatewayReviewOutcome" targetRef="taskCorregirSolicitud">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${scwf_tpApproved == false}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flowBuscarCandidatos" name="Buscar Candidatos" sourceRef="exgatewayReviewOutcome" targetRef="taskBuscarCandidatos">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${scwf_tpApproved == true}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow6" sourceRef="taskBuscarCandidatos" targetRef="endevent1"></sequenceFlow>
+    <sequenceFlow id="flow7" sourceRef="taskCorregirSolicitud" targetRef="notificationNewSolicitudTask"></sequenceFlow>
   </process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_reclutamientoPersonal">
     <bpmndi:BPMNPlane bpmnElement="reclutamientoPersonal" id="BPMNPlane_reclutamientoPersonal">
       <bpmndi:BPMNShape bpmnElement="startReclutamiento" id="BPMNShape_startReclutamiento">
-        <omgdc:Bounds height="35.0" width="35.0" x="100.0" y="290.0"></omgdc:Bounds>
+        <omgdc:Bounds height="35.0" width="35.0" x="101.0" y="360.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="notificationNewSolicitudTask" id="BPMNShape_notificationNewSolicitudTask">
         <omgdc:Bounds height="55.0" width="105.0" x="240.0" y="310.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
-        <omgdc:Bounds height="35.0" width="35.0" x="620.0" y="380.0"></omgdc:Bounds>
+        <omgdc:Bounds height="35.0" width="35.0" x="770.0" y="350.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="usertask1" id="BPMNShape_usertask1">
-        <omgdc:Bounds height="55.0" width="105.0" x="450.0" y="310.0"></omgdc:Bounds>
+        <omgdc:Bounds height="55.0" width="105.0" x="450.0" y="330.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exgatewayReviewOutcome" id="BPMNShape_exgatewayReviewOutcome">
+        <omgdc:Bounds height="40.0" width="40.0" x="617.0" y="267.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="taskBuscarCandidatos" id="BPMNShape_taskBuscarCandidatos">
+        <omgdc:Bounds height="55.0" width="105.0" x="730.0" y="260.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="taskCorregirSolicitud" id="BPMNShape_taskCorregirSolicitud">
+        <omgdc:Bounds height="55.0" width="105.0" x="380.0" y="100.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
-        <omgdi:waypoint x="135.0" y="307.0"></omgdi:waypoint>
-        <omgdi:waypoint x="240.0" y="337.0"></omgdi:waypoint>
+        <omgdi:waypoint x="136.0" y="377.0"></omgdi:waypoint>
+        <omgdi:waypoint x="292.0" y="365.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
         <omgdi:waypoint x="345.0" y="337.0"></omgdi:waypoint>
-        <omgdi:waypoint x="450.0" y="337.0"></omgdi:waypoint>
+        <omgdi:waypoint x="450.0" y="357.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
-        <omgdi:waypoint x="502.0" y="365.0"></omgdi:waypoint>
-        <omgdi:waypoint x="637.0" y="380.0"></omgdi:waypoint>
+        <omgdi:waypoint x="502.0" y="330.0"></omgdi:waypoint>
+        <omgdi:waypoint x="637.0" y="307.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flowCorregir" id="BPMNEdge_flowCorregir">
+        <omgdi:waypoint x="637.0" y="267.0"></omgdi:waypoint>
+        <omgdi:waypoint x="432.0" y="155.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="13.0" width="100.0" x="637.0" y="267.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flowBuscarCandidatos" id="BPMNEdge_flowBuscarCandidatos">
+        <omgdi:waypoint x="657.0" y="287.0"></omgdi:waypoint>
+        <omgdi:waypoint x="730.0" y="287.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="13.0" width="100.0" x="657.0" y="287.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
+        <omgdi:waypoint x="782.0" y="315.0"></omgdi:waypoint>
+        <omgdi:waypoint x="787.0" y="350.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow7" id="BPMNEdge_flow7">
+        <omgdi:waypoint x="432.0" y="155.0"></omgdi:waypoint>
+        <omgdi:waypoint x="292.0" y="310.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
