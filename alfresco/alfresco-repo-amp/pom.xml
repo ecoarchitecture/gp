@@ -6,12 +6,19 @@
     <packaging>amp</packaging>
     <description>This is a sample Alfresco repository AMP project, depended upon by the alfresco WAR aggregator</description>
 
-    <parent>
+    <!--parent>
         <groupId>mx.granportuaria</groupId>
         <artifactId>alfresco</artifactId>
         <version>1.0-SNAPSHOT</version>
+    </parent-->
+
+    <parent>
+      <groupId>mx.granportuaria</groupId>
+      <artifactId>alfresco</artifactId>
+      <version>1.0-SNAPSHOT</version>
     </parent>
-    
+
+
     <properties>
         <!-- Property overrides are mostly done in parent pom -->
     </properties>

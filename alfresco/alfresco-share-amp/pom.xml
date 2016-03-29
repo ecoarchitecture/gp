@@ -13,7 +13,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <!-- 
+  
+
+    <!--
         SDK properties have sensible defaults in the SDK parent,
         but you can override the properties below to use another version.
         For more available properties see the alfresco-sdk-parent POM.
@@ -27,8 +29,8 @@
         <app.log.root.level>WARN</app.log.root.level>
     </properties>
 
-    <!-- Following dependencies are needed for compiling Java code in src/main/java; 
-         <scope>provided</scope> is inherited for each of the following; 
+    <!-- Following dependencies are needed for compiling Java code in src/main/java;
+         <scope>provided</scope> is inherited for each of the following;
          for more info, please refer to alfresco-platform-distribution POM -->
     <dependencies>
         <dependency>
