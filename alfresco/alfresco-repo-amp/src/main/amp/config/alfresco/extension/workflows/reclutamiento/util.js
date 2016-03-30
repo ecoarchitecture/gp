@@ -6,7 +6,7 @@ function sendMailToGroup(wfPackage, mailTitle, wfDescription, wfPriority, groupN
 {
 	
 	
-	logger.log('sendMailToGroup init...');
+	logger.log('sendMailToGroup init..update.');
 	var group = people.getGroup(groupName);
 	var groupMembers = group.getChildren();
 
@@ -53,7 +53,7 @@ function sendMailToUser(wfPackage, wfPooled, mailTitle, wfDescription, wfPriorit
 		}
 		catch (exception)
 		{
-			log(exception);
+			logger.log(exception);
 		}
 	}
 	
@@ -91,7 +91,7 @@ function sendMailToEndUser(wfPackage, wfTitle, wfText, wfFolio, wfAnalisis, wfEq
 		}
 		catch (exception)
 		{
-			log(exception);
+			logger.log(exception);
 		}
 	}
 }
